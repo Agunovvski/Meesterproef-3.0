@@ -12,10 +12,16 @@ h1, h2, p {
 }
 
 
+/* .first-container, .second-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+} */
+
 
 /* section styles */
 
-.intro {
+.intro-container, .about-container {
     width: 100vw;
     height: 100vh;
 }
@@ -23,7 +29,7 @@ h1, h2, p {
 
 
 
-#pinContainer {
+#pinContainer, #pinContainer-2 {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -41,9 +47,20 @@ h1, h2, p {
 .turqoise {
     background-color: turquoise;
 }
-.green {
-    background-color: green;
+
+.red {
+    background-color: red;
 }
-.bordeaux {
-    background-color: burlywood;
+
+.yellow {
+    background-color: yellow;
 }
+
+.brown {
+    background-color: brown;
+}
+.pink {
+    background-color: pink;
+}
+
+
