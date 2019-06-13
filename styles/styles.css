@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+h1, h2, p {
+    color: white;
+}
+
+
+
+/* section styles */
+
+.intro {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+
+#pinContainer {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.panel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.blue {
+    background-color: blue
+}
+.turqoise {
+    background-color: turquoise;
+}
+.green {
+    background-color: green;
+}
+.bordeaux {
+    background-color: burlywood;
+}
