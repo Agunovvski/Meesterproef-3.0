@@ -97,42 +97,93 @@ div.overview-container .panel .comic-panel {
     z-index: 1;
     background-position: center;
     background-size: cover;
-    opacity: .9;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
+    opacity: .7;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    transition-duration: opacity, transform, box-shadow, background-image;
+}
+div.overview-container .panel .comic-panel:hover {
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+    z-index: 2 !important;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75) !important;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
 }
 div.overview-container .panel .comic-panel:first-of-type {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://i.ytimg.com/vi/8cl29Gvy-44/maxresdefault.jpg');
     /* url('https://i.redd.it/7pagr1oe68321.jpg'); */
     /* https: //media.giphy.com/media/fdOI5F4urRqWIBSgcY/giphy.gif */
-    grid-area: 1/ 2 / 5 /8;
+    grid-area: 2/ 3 / 5 /8;
     background-position: top center;
 }
 div.overview-container .panel .comic-panel:nth-of-type(2) {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://i.redd.it/7pagr1oe68321.jpg');
-    grid-area: 1/ 8 / 5 /12;
+    grid-area: 2/ 8 / 5 /11;
 }
 div.overview-container .panel .comic-panel:nth-of-type(3) {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://media.giphy.com/media/fQSf0G49rtI2lc0uX8/giphy.gif');
-    grid-area: 5 /2 /8 /6;
+    url('https://www.screengeek.net/wp-content/uploads/2019/05/avengers-endgame-time-travel.jpg');
+    grid-area: 5 /3 /8 /6;
     /* margin-left: -1rem;
     margin-top: 1rem; */
 }
 div.overview-container .panel .comic-panel:nth-of-type(4) {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/Avengers-Endgame-Thor-Stormbreaker-Mjolnir-Chris-Hemsworth.jpg');
-    grid-area: 5/ 6 / 8 /9;
+    grid-area: 5/ 6 / 8 /9;    
 }
 div.overview-container .panel .comic-panel:nth-of-type(5) {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://media.giphy.com/media/1YuCdSnC2eVca9aQ3P/giphy.gif');
-    grid-area: 5/ 9 / 8 /12;
+    url('https://icdn4.digitaltrends.com/image/fortnite-avengers-endgame-crossover-ltm-limited-time-event-tease-release-re2-720x720.jpg');
+    grid-area: 5/ 9 / 8 /11;
 }
 div.overview-container .panel .comic-panel:nth-of-type(6) {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://csn.naekranie.pl/wp-content/uploads/2019/05/v37BsT4C_o_5cdbb9daeeaf4.jpeg');
     /* https: //media.giphy.com/media/1BbZUKRloGktvQAO2w/giphy.gif */
-    grid-area: 8/ 2 / 13 /12;
+    grid-area: 8/ 3 / 12 /11;
+}
+
+div.overview-container .panel .comic-panel:first-of-type:hover {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.kinja-img.com/gawker-media/image/upload/s--IPttqpnU--/c_scale,fl_progressive,q_80,w_800/gowtqbe37zuansdni6rv.gif');
+}
+div.overview-container .panel .comic-panel:nth-of-type(2):hover{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media0.giphy.com/media/37smehqfuW84ZaEKT6/giphy.gif');
+}
+div.overview-container .panel .comic-panel:nth-of-type(3):hover {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media.giphy.com/media/fQSf0G49rtI2lc0uX8/giphy.gif');
+}
+div.overview-container .panel .comic-panel:nth-of-type(4):hover {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media.giphy.com/media/8vnih78ZeNTu3BOCrn/giphy.gif');
+}
+div.overview-container .panel .comic-panel:nth-of-type(5):hover {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media.giphy.com/media/1YuCdSnC2eVca9aQ3P/giphy.gif');
+}
+div.overview-container .panel .comic-panel:nth-of-type(6):hover {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media.giphy.com/media/1BbZUKRloGktvQAO2w/giphy.gif');
+}
+
+
+/* end start */
+
+.start-story h2 {
+    grid-area: 3 /5/ 6 /9;
+    font-size: 4rem;
+}
+
+.story-slide {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+   url('http://cdn.collider.com/wp-content/uploads/2018/05/avengers-infinity-war-thanos.jpg');
+    background-position: center;
 }
 

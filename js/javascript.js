@@ -1,13 +1,10 @@
 var controller = new ScrollMagic.Controller();
+var controller2 = new ScrollMagic.Controller({container: '.story-slide', vertical: false});
 
 // define movement of panels
-// var wipeAnimation = new TimelineMax()
-//     .fromTo("section.panel.turqoise", 1, { x: "-100%" }, { x: "0%", ease: Linear.easeNone })  // in from left
-//     .fromTo("section.panel.red", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone })  // in from right
-//     .fromTo("section.panel.yellow", 1, { y: "-100%" }, { y: "0%", ease: Linear.easeNone }); // in from top
 
 var wipeAnimation2 = new TimelineMax()
-    .fromTo("section.panel.pink", 1, { x: "-100%" }, { x: "0%", ease: Power1.easeOut });  // in from left
+    .fromTo("section.panel.story-slide", 1, { x: "100%" }, { x: "0%", ease: Power1.easeOut });  // in from left
 
 var infinityMove = new TimelineMax()
     .fromTo("div.intro-container .panel h2", 1, { y: "-70%" } ,{ y: "50%", ease: Linear.easeNone})
@@ -22,21 +19,7 @@ var revealComics = new TimelineMax()
 
 
 
-
-// create scene to pin and link animation
-// var firstContainer = new ScrollMagic.Scene({
-//     triggerElement: "#pinContainer",
-//     triggerHook: "onLeave",
-//     duration: "100%"
-// })
-// .setPin("#pinContainer")
-// .setTween(wipeAnimation)
-// .addIndicators({
-//     name: 'check scroll',
-//     colorStart: 'green',
-//     colorEnd: 'red'
-// }) 
-// .addTo(controller);
+// scenes
 
 var infinityScroll = new ScrollMagic.Scene({
     triggerElement: "div.intro-container .panel",
