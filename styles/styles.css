@@ -3,44 +3,38 @@
     margin: 0;
 }
 
+html {
+    scrollbar-width: none;
+}
+
 body {
     background-color: black;
 }
 
 h1, h2, p {
     color: white;
+    font-family: 'Cabin', sans-serif;
 }
 
-
-/* .first-container, .second-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: scroll;
-} */
 
 
 /* section styles */
 
-.intro-container, .about-container {
+.general-container {
     width: 100vw;
     height: 100vh;
 }
-
-
-
-
 #pinContainer, #pinContainer-2 {
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
 }
-
 .panel {
     height: 100%;
     width: 100%;
     position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-
 .blue {
     background-color: blue
 }
@@ -51,11 +45,9 @@ h1, h2, p {
 .red {
     background-color: red;
 }
-
 .yellow {
     background-color: yellow;
 }
-
 .brown {
     background-color: brown;
 }
@@ -63,4 +55,84 @@ h1, h2, p {
     background-color: pink;
 }
 
+
+/* specific section style */
+
+/* begin */
+div.begin-container .panel h1 {
+    grid-area: 3 / 3 / 6 /9;
+    font-size: 4rem;
+    line-height: 1.3;
+}
+a.highlight-text {
+    font-style: none;
+}
+
+
+/* intro */
+div.intro-container .panel p {
+    grid-area: 3 / 3 / 6 /9;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+div.intro-container .panel h2 {
+    transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    grid-area: 2 /7 / 6 / 9;
+    font-size: 9rem;
+    opacity: 0.1;
+    line-height: 0.9;
+}
+
+
+/* overview */
+
+div.overview-container .panel {
+    grid-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+div.overview-container .panel .comic-panel {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    opacity: .9;
+}
+div.overview-container .panel .comic-panel:first-of-type {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.ytimg.com/vi/8cl29Gvy-44/maxresdefault.jpg');
+    /* url('https://i.redd.it/7pagr1oe68321.jpg'); */
+    /* https: //media.giphy.com/media/fdOI5F4urRqWIBSgcY/giphy.gif */
+    grid-area: 1/ 2 / 5 /8;
+    background-position: top center;
+}
+div.overview-container .panel .comic-panel:nth-of-type(2) {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.redd.it/7pagr1oe68321.jpg');
+    grid-area: 1/ 8 / 5 /12;
+}
+div.overview-container .panel .comic-panel:nth-of-type(3) {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media.giphy.com/media/fQSf0G49rtI2lc0uX8/giphy.gif');
+    grid-area: 5 /2 /8 /6;
+    /* margin-left: -1rem;
+    margin-top: 1rem; */
+}
+div.overview-container .panel .comic-panel:nth-of-type(4) {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/Avengers-Endgame-Thor-Stormbreaker-Mjolnir-Chris-Hemsworth.jpg');
+    grid-area: 5/ 6 / 8 /9;
+}
+div.overview-container .panel .comic-panel:nth-of-type(5) {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media.giphy.com/media/1YuCdSnC2eVca9aQ3P/giphy.gif');
+    grid-area: 5/ 9 / 8 /12;
+}
+div.overview-container .panel .comic-panel:nth-of-type(6) {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://csn.naekranie.pl/wp-content/uploads/2019/05/v37BsT4C_o_5cdbb9daeeaf4.jpeg');
+    /* https: //media.giphy.com/media/1BbZUKRloGktvQAO2w/giphy.gif */
+    grid-area: 8/ 2 / 13 /12;
+}
 
