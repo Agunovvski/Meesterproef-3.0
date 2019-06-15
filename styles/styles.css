@@ -173,7 +173,7 @@ div.overview-container .panel .comic-panel:nth-of-type(6):hover {
 }
 
 
-/* end start */
+/* end start and start story 1*/
 
 .start-story h2 {
     grid-area: 3 /5/ 6 /9;
@@ -183,13 +183,13 @@ div.overview-container .panel .comic-panel:nth-of-type(6):hover {
 .story-slide {
     background-color: black;
 }
-.story-slide h2 {
+.story1-container .story-slide h2 {
     grid-area: 3 / 2 / 3 / 8;
     font-size: 5rem;
     z-index: 3;
 }
 
-.story-img-1, .story-bg-1 {
+.story-img-1, .story-bg-1, .story-img-2, .story-bg-2 {
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -208,12 +208,13 @@ div.overview-container .panel .comic-panel:nth-of-type(6):hover {
     z-index: 1;
     opacity: 0.1;
 }
+.story1-container,
+.story2-container {
+    overflow: hidden;
+}
 
 /* story 1 */
 
-.story1-container {
-    overflow: hidden;
-}
 .story1-content .story-slide:first-of-type p {
     grid-area: 2 / 4 / 4 /10;
     font-size: 2rem;
@@ -224,6 +225,7 @@ div.overview-container .panel .comic-panel:nth-of-type(6):hover {
     height: 100%;
     z-index: 1;
     background-size: cover;
+    background-position: center;
 }
 div.movie1 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
@@ -251,3 +253,78 @@ div.comic1-1 {
     url('https://cdn3.whatculture.com/images/2018/04/6db4b1b2300d5100-600x338.jpg');
     grid-area: 3 / 7 / 6 /12;
 }
+
+/* start story 2 */
+
+.story-img-2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://i.redd.it/7pagr1oe68321.jpg');
+    z-index: 2;
+    grid-area: 2/ 5 / 5 / 11;
+}
+.story-bg-2 {
+    background-color: white;
+    grid-area: 1 / 9 / 12 / 13;
+    z-index: 1;
+    opacity: 0.1;
+}
+.story2-container .story-slide h2 {
+    grid-area: 3 / 2 / 3 / 8;
+    font-size: 5rem;
+    z-index: 3;
+}
+
+/* story 2 */
+
+.story2-content .story-slide:first-of-type p:first-of-type {
+    grid-area: 3 / 4 / 5 /10;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+.story2-content .story-slide:first-of-type p:nth-of-type(2) {
+    grid-area: 5 / 4 / 5 /10;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: orange;
+}
+.story2-content .story-slide:nth-of-type(2) p:first-of-type {
+    grid-area: 4 / 8 / 4 /12;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    color: orange;
+}
+div.movie2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://imgix.bustle.com/uploads/image/2019/4/30/7ac1298f-badf-4135-ac07-069888b1b62f-screen-shot-2019-04-30-at-25407-pm.png?w=646&fit=max&auto=format&q=70');
+    grid-area: 5 / 2 / 7 /7;
+}
+.story2-content .story-slide:nth-of-type(3) p:first-of-type {
+    grid-area: 2 / 2 / 3 /6;
+    font-size: 3rem;
+    line-height: 1.3;
+    color: orange;
+}
+
+div.comic2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://oyster.ignimgs.com/wordpress/stg.ign.com/2018/12/1074601-cosmic_powers_unlimited_01___silver_surfer_page_16_image_0001-720x1132.jpg');
+    grid-area: 1 / 7 / 5 /12;
+}
+
+.story2-content .story-slide:nth-of-type(4) div {
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 4 / 5 /10;
+}
+#juxtapose-embed {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+a.jx-knightlab {
+    all: inherit !important;
+}
+.story2-content .story-slide:nth-of-type(4) p {
+    grid-area: 5 /2 / 6 / 12;
+    font-size: 2rem;
+}
+
+/* story 3 */
