@@ -14,6 +14,7 @@ body {
 h1, h2, p {
     color: white;
     font-family: 'Cabin', sans-serif;
+    z-index: 2;
 }
 
 
@@ -24,13 +25,11 @@ h1, h2, p {
     width: 100vw;
     height: 100vh;
 }
-#pinContainer, #pinContainer-2 {
-    overflow: hidden;
-}
+
 .panel {
     height: 100%;
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -182,8 +181,73 @@ div.overview-container .panel .comic-panel:nth-of-type(6):hover {
 }
 
 .story-slide {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-   url('http://cdn.collider.com/wp-content/uploads/2018/05/avengers-infinity-war-thanos.jpg');
+    background-color: black;
+}
+.story-slide h2 {
+    grid-area: 3 / 2 / 3 / 8;
+    font-size: 5rem;
+    z-index: 3;
+}
+
+.story-img-1, .story-bg-1 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
     background-position: center;
 }
 
+.story-img-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.ytimg.com/vi/8cl29Gvy-44/maxresdefault.jpg');
+    z-index: 2;
+    grid-area: 2/ 5 / 5 / 11;
+}
+.story-bg-1 {
+    background-color: white;
+    grid-area: 1 / 9 / 12 / 13;
+    z-index: 1;
+    opacity: 0.1;
+}
+
+/* story 1 */
+
+.story1-container {
+    overflow: hidden;
+}
+.story1-content .story-slide:first-of-type p {
+    grid-area: 2 / 4 / 4 /10;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+.comic-img {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+}
+div.movie1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://img.cinemablend.com/filter:scale/quill/6/a/9/9/9/d/6a999d9d66267c398591444fd91bfafa1be1ebe2.jpg?mw=600');
+    grid-area: 5 / 3 / 8 /7;
+}
+div.comic1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://geeksoncoffee.com/wp-content/uploads/2018/08/Doctor-Strange-Disintegrates-in-Avengers-Infinity-War.jpg');
+    grid-area: 5 / 7 / 7 /11;
+}
+.story1-content .story-slide:nth-of-type(2) p:first-of-type {
+    grid-area: 3 / 2 / 5 /7;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+.story1-content .story-slide:nth-of-type(2) p:nth-of-type(2) {
+    grid-area: 6 / 2 / 5 /6;
+    font-size: 1rem;
+    line-height: 1.1;
+    color: orange;
+}
+div.comic1-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://cdn3.whatculture.com/images/2018/04/6db4b1b2300d5100-600x338.jpg');
+    grid-area: 3 / 7 / 6 /12;
+}
