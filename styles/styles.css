@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     scrollbar-width: none;
 }
@@ -183,34 +187,57 @@ div.overview-container .panel .comic-panel:nth-of-type(6):hover {
 .story-slide {
     background-color: black;
 }
-.story1-container .story-slide h2 {
+.story1-container .story-slide h2,
+.story2-container .story-slide h2,
+.story3-container .story-slide h2,
+.story4-container .story-slide h2,
+.story5-container .story-slide h2,
+.story6-container .story-slide h2{
     grid-area: 3 / 2 / 3 / 8;
     font-size: 5rem;
     z-index: 3;
 }
 
-.story-img-1, .story-bg-1, .story-img-2, .story-bg-2 {
+.story1-container,
+.story2-container,
+.story3-container,
+.story4-container,
+.story5-container,
+.story6-container {
+    overflow: hidden;
+}
+
+.story-img-1, .story-bg-1, .story-img-2, .story-bg-2, .story-img-3, .story-bg-3, .story-img-4, .story-bg-4, .story-img-5, .story-bg-5, .story-img-6, .story-bg-6 {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
 }
-
-.story-img-1 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://i.ytimg.com/vi/8cl29Gvy-44/maxresdefault.jpg');
+.story-img-1,
+.story-img-2,
+.story-img-3,
+.story-img-4,
+.story-img-5,
+.story-img-6 {
     z-index: 2;
     grid-area: 2/ 5 / 5 / 11;
 }
-.story-bg-1 {
+.story-bg-1,
+.story-bg-2,
+.story-bg-3,
+.story-bg-4,
+.story-bg-5,
+.story-bg-6 {
     background-color: white;
     grid-area: 1 / 9 / 12 / 13;
     z-index: 1;
     opacity: 0.1;
 }
-.story1-container,
-.story2-container {
-    overflow: hidden;
+
+
+.story-img-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.ytimg.com/vi/8cl29Gvy-44/maxresdefault.jpg');
 }
 
 /* story 1 */
@@ -259,19 +286,6 @@ div.comic1-1 {
 .story-img-2 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
         url('https://i.redd.it/7pagr1oe68321.jpg');
-    z-index: 2;
-    grid-area: 2/ 5 / 5 / 11;
-}
-.story-bg-2 {
-    background-color: white;
-    grid-area: 1 / 9 / 12 / 13;
-    z-index: 1;
-    opacity: 0.1;
-}
-.story2-container .story-slide h2 {
-    grid-area: 3 / 2 / 3 / 8;
-    font-size: 5rem;
-    z-index: 3;
 }
 
 /* story 2 */
@@ -310,21 +324,60 @@ div.comic2 {
 }
 
 .story2-content .story-slide:nth-of-type(4) div {
-    width: 100%;
-    height: 100%;
-    grid-area: 1 / 4 / 5 /10;
+    grid-area: 1 / 4 / 4 /10;
 }
 #juxtapose-embed {
     height: 100% !important;
     width: 100% !important;
 }
+div.iframe-embed-styling {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+}
 
 a.jx-knightlab {
-    all: inherit !important;
+    all: unset !important;
 }
 .story2-content .story-slide:nth-of-type(4) p {
     grid-area: 5 /2 / 6 / 12;
     font-size: 2rem;
 }
 
+/* start story 3 */
+.story-img-3 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://www.screengeek.net/wp-content/uploads/2019/05/avengers-endgame-time-travel.jpg');
+}
+
 /* story 3 */
+
+
+
+/* start story 4  */
+.story-img-4 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/Avengers-Endgame-Thor-Stormbreaker-Mjolnir-Chris-Hemsworth.jpg');
+}
+
+/* story 4 */
+
+
+
+/* start story 5  */
+.story-img-5 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://icdn4.digitaltrends.com/image/fortnite-avengers-endgame-crossover-ltm-limited-time-event-tease-release-re2-720x720.jpg');
+}
+
+/* story 5 */
+
+
+/* start story 6  */
+.story-img-6 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://csn.naekranie.pl/wp-content/uploads/2019/05/v37BsT4C_o_5cdbb9daeeaf4.jpeg');
+}
+
+/* story 6 */
+
