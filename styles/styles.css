@@ -19,6 +19,26 @@ h1, h2, p {
     color: white;
     font-family: 'Cabin', sans-serif;
     z-index: 2;
+    line-height: 1.3;
+}
+
+
+
+
+.progress-container {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 3px;
+    /* background: #ccc; */
+}
+
+.progress-bar {
+    height: 3px;
+    background: white;
+    width: 0%;
+    transition: width .1s ease-in-out;
 }
 
 
@@ -352,16 +372,150 @@ a.jx-knightlab {
 
 /* story 3 */
 
+.story3-content .story-slide:first-of-type p:first-of-type {
+    grid-area: 2/ 2 / 3/ 10;
+    font-size: 2rem;
+}
+
+.story3-content .story-slide:first-of-type p:nth-of-type(2) {
+    grid-area: 3/ 8/ 4/ 12;
+    font-size: 1.5rem;
+    color: orange;
+}
+.story3-content .story-slide:first-of-type p:nth-of-type(3) {
+    grid-area: 6/ 2/ 6/ 10;
+    font-size: 4rem;
+}
+.story3-content .story-slide:nth-of-type(2) p:first-of-type {
+    grid-area: 1/ 3 / 2/ 10;
+    font-size: 2rem;
+}
+
+.story3-content .story-slide:nth-of-type(2) p:nth-of-type(2) {
+    grid-area: 4/ 8/ 6/ 12;
+    font-size: 1.5rem;
+    color: orange;
+}
+div.comic3 {
+    grid-area: 3 /2 /6/ 7;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://cdn.vox-cdn.com/thumbor/72K-dmT7C3YtlqibXPqXwYS_uLc=/0x0:2730x1681/1320x0/filters:focal(0x0:2730x1681):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10751213/IMG_0176.jpg');
+}
+
+
+/* time travel embed  src = https://github.com/nightduck/EndgameTimeline */
+
+.constrain-height {
+    padding: 0 2rem;
+    margin-bottom: 15rem;
+}
+
+.container {
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    /* position: relative; */
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    /*max-height: 480px;*/
+    position: relative;
+
+}
+
+.overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.overlay>img {
+    width: 26px;
+    height: 26px;
+}
+
+.caption {
+    font-family: 'Cabin', sans-serif;
+    z-index: 2;
+    color: orange;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.75);
+    width: 50%;
+    position: relative;
+    line-height: 1.3;
+    padding-top: 1rem;
+}
+
+.caption-drawer {
+    position: absolute;
+    width: 80%;
+    bottom: -50%;
+}
+
+.caption-drawer.visible {
+    bottom: 0px;
+}
+
+img.hidden {
+    display: none;
+}
+svg rect {
+    fill: black !important;
+}
+text {
+    fill: white;
+       font-family: 'Cabin',
+       sans-serif;
+}
+
 
 
 /* start story 4  */
 .story-img-4 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
         url('https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/Avengers-Endgame-Thor-Stormbreaker-Mjolnir-Chris-Hemsworth.jpg');
+    grid-area: 3 / 7/ 6 /11;
 }
 
 /* story 4 */
-
+.story4-content .story-slide:first-of-type p:first-of-type {
+    grid-area: 3/ 3 / 3/ 6;
+    line-height: 1.3;
+}
+.story4-content .story-slide:first-of-type p:nth-of-type(2) {
+    grid-area: 5 /3 / 5 /6;
+    line-height: 1.3;
+}
+div.movie4-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://img1.looper.com/img/gallery/all-the-ways-marvel-has-tortured-thor/intro-1548700206.jpg');
+    grid-area: 2 / 7/ 4 /11;
+    opacity: 0.7;
+}
+div.movie4-2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('http://static1.1.sqspcdn.com/static/f/360296/28135055/1559064623193/e_Fat_Thor_05282019.jpg?token=QTRPRm1W6ouRu%2FcurDEcv2J5HJI%3D');
+    grid-area: 4 / 7/ 6 /11;
+    opacity: 0.7;
+}
+div.comic4 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.kinja-img.com/gawker-media/image/upload/s--VxzZel4D--/c_scale,f_auto,fl_progressive,q_80,w_800/jhpne3yuwwq4uvpmayvj.png');
+    grid-area: 1 /1 / 3 /4;
+}
+div.movie4-3 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i2.wp.com/themarvelreport.com/wp-content/uploads/2016/11/Broken-Thor.png?resize=500%2C275');
+    grid-area: 1 / 9 / 3 / 13;
+}
+.story4-content .story-slide:nth-of-type(2) p:first-of-type {
+    grid-area: 4 / 2 /5 /6;
+    font-size: 1.5rem;
+}
+.story4-content .story-slide:nth-of-type(2) p:nth-of-type(2) {
+    grid-area: 4 /7 /5 /11;
+    font-size: 1.5rem;
+}
 
 
 /* start story 5  */

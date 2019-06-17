@@ -60,6 +60,10 @@ var sideBySide = new TimelineMax()
     .fromTo("div.movie2", 1, {y: "0%" }, {y: "80%", ease: Linear.easeNone })
     .fromTo("div.comic2", 1, { y: "0%" }, { y: "-80%", ease: Linear.easeNone }, '-=1');
 
+var compareThorTl = new TimelineMax()
+    .fromTo("div.movie4-1", 1, { opacity: 1, y: "-25%" }, { opacity: .5, y: "50%", ease: Linear.easeNone })
+    .fromTo("div.movie4-2", 1, { opacity: 1, y: "25%" }, { opacity: .6, y: "-50%", ease: Linear.easeNone }, '-=1');
+
 
 
 // scenes
@@ -224,10 +228,28 @@ var story2SideBySide = new ScrollMagic.Scene({
     })
     .addTo(controller);  
 
+var compareThor = new ScrollMagic.Scene({
+    triggerElement: ".story4-content .story-slide:nth-of-type(1)",
+    triggerHook: 'onCenter',
+    offset: 100,
+    duration: "40%"
+})
+    .setTween(compareThorTl)
+    .addIndicators({
+        name: 'check compareThorTl',
+        colorStart: 'yellow',
+        colorEnd: 'red'
+    })
+    .addTo(controller); 
+
 
 
 var comicPanel1 = document.querySelector('div.overview-container .panel .comic-panel:first-of-type');
 var comicPanel2 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(2)');
+var comicPanel3 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(3)');
+var comicPanel4 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(4)');
+var comicPanel5 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(5)');
+var comicPanel6 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(6)');
 
 function goToStory1 () {
     TweenLite.to(window, 1, { scrollTo: '.story1-container'});
@@ -235,6 +257,36 @@ function goToStory1 () {
 function goToStory2() {
     TweenLite.to(window, 1, { scrollTo: '.story2-container'});
 }
+function goToStory3() {
+    TweenLite.to(window, 1, { scrollTo: '.story3-container'});
+}
+function goToStory4() {
+    TweenLite.to(window, 1, { scrollTo: '.story4-container' });
+}
+function goToStory5() {
+    TweenLite.to(window, 1, { scrollTo: '.story5-container' });
+}
+function goToStory6() {
+    TweenLite.to(window, 1, { scrollTo: '.story6-container' });
+}
 
 comicPanel1.addEventListener('click', goToStory1);
 comicPanel2.addEventListener('click', goToStory2);
+comicPanel3.addEventListener('click', goToStory3);
+comicPanel4.addEventListener('click', goToStory4);
+comicPanel5.addEventListener('click', goToStory5);
+comicPanel6.addEventListener('click', goToStory6);
+
+
+
+// scrollindicator
+
+window.onscroll = function () { myFunction() };
+
+function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+    // console.log(scrolled);
+}
