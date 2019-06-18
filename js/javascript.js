@@ -49,20 +49,22 @@ var imagesApart = new TimelineMax()
     .fromTo(".movie1, .comic1", 1, { y: '0%' }, { y: "30%", ease: Linear.easeNone });
 
 var staggerStory1Text = new TimelineMax()
-    .staggerFrom(".story1-content .story-slide:nth-of-type(2) p", 1, { opacity: 0, y: "10%", ease: Power1.easeOut }, .5)
-    .from('div.comic1-1', 1, { opacity: 0, y: "10%", ease: Power1.easeOut}, "-=1");
+    .staggerFrom(".story1-content .story-slide:nth-of-type(2) p, div.comic1-1", 1, { opacity: 0, y: "10%", ease: Power1.easeOut }, .75)
+    // .from('div.comic1-1', 1, { opacity: 0, y: "10%", ease: Power1.easeOut}, "-=1");
 
 var whereIsThanos = new TimelineMax()
     .fromTo(".story2-content .story-slide:first-of-type p:first-of-type", 2, { opacity: 1, y: "0%" }, { opacity: 0, y: "40%", ease: Linear.easeNone })
     .fromTo(".story2-content .story-slide:first-of-type p:nth-of-type(2)", 1, { opacity: 0 }, { opacity: 1, ease: Linear.easeNone }, '-=2');
 
 var sideBySide = new TimelineMax()
-    .fromTo("div.movie2", 1, {y: "0%" }, {y: "80%", ease: Linear.easeNone })
-    .fromTo("div.comic2", 1, { y: "0%" }, { y: "-80%", ease: Linear.easeNone }, '-=1');
+    .fromTo("div.movie2", 1, {y: "-30%" }, {y: "40%", ease: Linear.easeNone })
+    .fromTo("div.comic2", 1, { y: "0%" }, { y: "-40%", ease: Linear.easeNone }, '-=1');
 
 var compareThorTl = new TimelineMax()
-    .fromTo("div.movie4-1", 1, { opacity: 1, y: "-25%" }, { opacity: .5, y: "50%", ease: Linear.easeNone })
-    .fromTo("div.movie4-2", 1, { opacity: 0, y: "25%" }, { opacity: .8, y: "-50%", ease: Linear.easeNone }, '-=1');
+    .set("div.movie4-1", { y: "50%" })
+    .set("div.movie4-2", { y: "-50%" })
+    .fromTo("div.movie4-1", 1, { opacity: 1, x: "-25%" }, { opacity: .5, x: "50%", ease: Linear.easeNone })
+    .fromTo("div.movie4-2", 1, { opacity: 0, x: "25%" }, { opacity: .8, x: "-50%", ease: Linear.easeNone }, '-=1');
 
 var comicThorTl = new TimelineMax()
     .fromTo(".comic4", 1, { opacity: 0,x: 0 }, { opacity: 1,x: "60%", ease: Linear.easeNone })
@@ -78,6 +80,11 @@ var thanosMartyrTl = new TimelineMax()
 var capMjolnirTl = new TimelineMax()
     .staggerFrom(".story5-content .story-slide:first-of-type div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
 
+var capMjolnirMoveTl = new TimelineMax()
+    .fromTo(".story5-content .story-slide:first-of-type div:first-of-type", 1, { y: "-10%" }, { y: "40%", ease: Linear.easeNone })
+    .fromTo(".story5-content .story-slide:first-of-type div:nth-of-type(2)", 1, { y: "-20%" }, { y: "20%", ease: Linear.easeNone }, '-=1')
+    .fromTo(".story5-content .story-slide:first-of-type div:nth-of-type(3)", 1, { y: "0%" }, { y: "-20%", ease: Linear.easeNone }, '-=2');
+
 var capComicsTl = new TimelineMax()
     .staggerFrom(".story5-content .story-slide:nth-of-type(2) div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
 
@@ -88,7 +95,7 @@ var capTextTl = new TimelineMax()
 
 $('.start-story h2').each(function(){
     var startStoryScroll = new TimelineMax()
-        .fromTo($(this), 1, { scale: 1 }, { scale: 1.5, ease: Linear.easeNone });
+        .fromTo($(this), 1, { scale: 1 }, { scale: 2, ease: Linear.easeNone });
 
     var scrollStartStory = new ScrollMagic.Scene({
         triggerElement: this,
@@ -156,11 +163,11 @@ var infinityScroll = new ScrollMagic.Scene({
     duration: "100%"
 })
 .setTween(infinityMove)
-.addIndicators({
-    name: 'check infinity ',
-    colorStart: 'yellow',
-    colorEnd: 'red'
-})
+// .addIndicators({
+//     name: 'check infinity ',
+//     colorStart: 'yellow',
+//     colorEnd: 'red'
+// })
 .addTo(controller);
 
 
@@ -170,11 +177,11 @@ var byeText = new ScrollMagic.Scene({
     duration: "50%"
 })
 .setTween(fadeText)
-.addIndicators({
-    name: 'check byeText ',
-    colorStart: 'pink',
-    colorEnd: 'red'
-})
+// .addIndicators({
+//     name: 'check byeText ',
+//     colorStart: 'pink',
+//     colorEnd: 'red'
+// })
 .addTo(controller);
 
 
@@ -184,11 +191,11 @@ var staggerComicPanels = new ScrollMagic.Scene({
     duration: "0"
 })
     .setTween(revealComics)
-    .addIndicators({
-        name: 'check revealComics ',
-        colorStart: 'orange',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check revealComics ',
+    //     colorStart: 'orange',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 
@@ -199,11 +206,11 @@ var story1Images = new ScrollMagic.Scene({
     duration: "100%"
 })
 .setTween(imagesApart)
-.addIndicators({
-    name: 'check tearApart ',
-    colorStart: 'yellow',
-    colorEnd: 'red'
-})
+// .addIndicators({
+//     name: 'check tearApart ',
+//     colorStart: 'yellow',
+//     colorEnd: 'red'
+// })
 .addTo(controller);
 
 var story1Text = new ScrollMagic.Scene({
@@ -212,11 +219,11 @@ var story1Text = new ScrollMagic.Scene({
     duration: "50%"
 })
     .setTween(staggerStory1Text)
-    .addIndicators({
-        name: 'check staggeStory1Text ',
-        colorStart: 'orange',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check staggeStory1Text ',
+    //     colorStart: 'orange',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
   
 
@@ -227,16 +234,16 @@ var story2TextFade = new ScrollMagic.Scene({
     duration: "20%"
 })
     .setTween(whereIsThanos)
-    .addIndicators({
-        name: 'check whereIsThanos',
-        colorStart: 'pink',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check whereIsThanos',
+    //     colorStart: 'pink',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 var story2SideBySide = new ScrollMagic.Scene({
     triggerElement: ".story2-content .story-slide:nth-of-type(2) p:first-of-type",
-    duration: "100%"
+    duration: "30%"
 })
     .setTween(sideBySide)
     .addIndicators({
@@ -249,8 +256,8 @@ var story2SideBySide = new ScrollMagic.Scene({
 var compareThor = new ScrollMagic.Scene({
     triggerElement: ".story4-content .story-slide:nth-of-type(1)",
     triggerHook: 'onCenter',
-    offset: 100,
-    duration: "40%"
+    offset: 150,
+    duration: "100%"
 })
     .setTween(compareThorTl)
     .addIndicators({
@@ -266,11 +273,11 @@ var comicThor = new ScrollMagic.Scene({
     duration: "50%"
 })
     .setTween(comicThorTl)
-    .addIndicators({
-        name: 'check comicThorTl ',
-        colorStart: 'orange',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check comicThorTl ',
+    //     colorStart: 'orange',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 var questionSnap = new ScrollMagic.Scene({
@@ -280,11 +287,11 @@ var questionSnap = new ScrollMagic.Scene({
     duration: "75%"
 })
     .setTween(questionSnapTl)
-    .addIndicators({
-        name: 'check questionSnapTl ',
-        colorStart: 'orange',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check questionSnapTl ',
+    //     colorStart: 'orange',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 var thanosMartyr = new ScrollMagic.Scene({
@@ -293,11 +300,11 @@ var thanosMartyr = new ScrollMagic.Scene({
     duration: "50%"
 })
     .setTween(thanosMartyrTl)
-    .addIndicators({
-        name: 'check thanosMartyrTl ',
-        colorStart: 'green',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check thanosMartyrTl ',
+    //     colorStart: 'green',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 var capMjolnir = new ScrollMagic.Scene({
@@ -306,11 +313,24 @@ var capMjolnir = new ScrollMagic.Scene({
     duration: "0"
 })
     .setTween(capMjolnirTl)
-    .addIndicators({
-        name: 'check capMjolnirTl ',
-        colorStart: 'purple',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check capMjolnirTl ',
+    //     colorStart: 'purple',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+
+var capMjolnirMove = new ScrollMagic.Scene({
+    triggerElement: ".story5-content .story-slide:first-of-type",
+    duration: "70%"
+})
+    .setTween(capMjolnirMoveTl)
+    // .addIndicators({
+    //     name: 'check capMjolnirMoveTl ',
+    //     colorStart: 'purple',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 var capComics = new ScrollMagic.Scene({
@@ -319,11 +339,11 @@ var capComics = new ScrollMagic.Scene({
     duration: "0"
 })
     .setTween(capComicsTl)
-    .addIndicators({
-        name: 'check capComicsTl ',
-        colorStart: 'purple',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check capComicsTl ',
+    //     colorStart: 'purple',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
 var capText = new ScrollMagic.Scene({
@@ -332,14 +352,14 @@ var capText = new ScrollMagic.Scene({
     duration: "50%"
 })
     .setTween(capTextTl)
-    .addIndicators({
-        name: 'check capTextTl ',
-        colorStart: 'brown',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check capTextTl ',
+    //     colorStart: 'brown',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);
 
-
+var comicPanelAll = document.querySelectorAll('div.overview-container .panel .comic-panel');
 var comicPanel1 = document.querySelector('div.overview-container .panel .comic-panel:first-of-type');
 var comicPanel2 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(2)');
 var comicPanel3 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(3)');
@@ -366,12 +386,27 @@ function goToStory6() {
     TweenLite.to(window, 1, { scrollTo: '.story6-container' });
 }
 
+
 comicPanel1.addEventListener('click', goToStory1);
 comicPanel2.addEventListener('click', goToStory2);
 comicPanel3.addEventListener('click', goToStory3);
 comicPanel4.addEventListener('click', goToStory4);
 comicPanel5.addEventListener('click', goToStory5);
 comicPanel6.addEventListener('click', goToStory6);
+
+function revealTitleComic(e) {
+    e.target.querySelector('p').classList.add('revealTitle');
+}
+function hideTitleComic(e) {
+    e.target.querySelector('p').classList.remove('revealTitle');
+}
+
+for (i = 0; i < comicPanelAll.length; i++) {
+    comicPanelAll[i].addEventListener('mouseover', revealTitleComic);
+}
+for (i = 0; i < comicPanelAll.length; i++) {
+    comicPanelAll[i].addEventListener('mouseleave', hideTitleComic);
+}
 
 
 
