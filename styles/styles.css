@@ -15,6 +15,7 @@ body {
     background-color: black;
 }
 
+
 h1, h2, p {
     color: white;
     font-family: 'Cabin', sans-serif;
@@ -28,19 +29,64 @@ h1, h2, p {
 .progress-container {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 99;
     width: 100%;
-    height: 3px;
+    height: 2px;
     /* background: #ccc; */
 }
 
 .progress-bar {
-    height: 3px;
+    height: 2px;
     background: white;
     width: 0%;
-    transition: width .1s ease-in-out;
+    transition: width .1s ease-out;
 }
 
+
+/* nav bar fixed */
+
+.MyBlog-menu.revealMenu {
+    opacity: 1;
+}
+
+.MyBlog-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    background-color: rgba(24, 24, 24, 0.7);
+    opacity: 0;
+    /* filter: alpha(opacity=70); */
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    z-index: 98;
+    transition: opacity 1s ease-out;
+    transition-delay: .2s;
+}
+
+.MyBlog-menu ul {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.6;
+    list-style: none;
+}
+
+.MyBlog-menu ul li {
+    border-radius: 7px
+}
+
+.MyBlog-menu ul li a {
+    text-decoration: none;
+    color: #4c4c4c;
+    font-family: 'Cabin',
+        sans-serif;
+    font-size: .9rem;
+}
+
+.MyBlog-menu ul li a:hover {
+    color: white;
+}
 
 
 /* section styles */
@@ -57,25 +103,6 @@ h1, h2, p {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-.blue {
-    background-color: blue
-}
-.turqoise {
-    background-color: turquoise;
-}
-
-.red {
-    background-color: red;
-}
-.yellow {
-    background-color: yellow;
-}
-.brown {
-    background-color: brown;
-}
-.pink {
-    background-color: pink;
 }
 
 
@@ -525,6 +552,43 @@ div.movie4-3 {
 }
 
 /* story 5 */
+div.movie5-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media1.tenor.com/images/7a870aff84a0d62ef0293645f81e2c3f/tenor.gif?itemid=14072817');
+    grid-area: 2/2 /3/7;
+}
+div.movie5-2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://media1.tenor.com/images/fcd2c4d030f06f050ec733db0121cb4e/tenor.gif?itemid=14031250');
+    grid-area: 3/ 4/4 / 9;
+}
+div.movie5-3 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/80727.jpg');
+    grid-area: 4/6 /5 /12;
+}
+.story5-content .story-slide:first-of-type p:first-of-type {
+    grid-area: 2 /9 /4 /12;
+    font-size: 2.5rem;
+}
+
+div.comic5-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://1.bp.blogspot.com/-wm0QJaPlYgg/Wgtaj1lYyPI/AAAAAAAB1fg/QRXI2JAK4MIr71XieHtmpiANyuwVzCdIgCLcBGAs/s1600/7-Mjolnir-Captain-America-2-Fear-Itself-7.jpg');
+    grid-area: 1 / 2/ 4 / 5;
+}
+div.comic5-2 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://i.pinimg.com/originals/a0/e0/30/a0e03002048439ded0a1adeae8ef252a.jpg');
+    grid-area: 1 / 6 /3 /8;
+}
+div.comic5-3 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://i1.wp.com/thetvfandom.com/wp-content/uploads/2019/02/Captain-america-become-worthy-of-mjolnir.jpg?resize=780%2C641&ssl=1');
+        grid-area: 1 / 9;
+}
+.story5-content .story-slide:nth-of-type(2) p:first-of-type {
+    font-size: 2rem;
+    grid-area: 4 / 7 /4 /12;
+}
 
 
 /* start story 6  */

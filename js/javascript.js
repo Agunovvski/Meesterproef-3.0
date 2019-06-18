@@ -62,9 +62,27 @@ var sideBySide = new TimelineMax()
 
 var compareThorTl = new TimelineMax()
     .fromTo("div.movie4-1", 1, { opacity: 1, y: "-25%" }, { opacity: .5, y: "50%", ease: Linear.easeNone })
-    .fromTo("div.movie4-2", 1, { opacity: 1, y: "25%" }, { opacity: .6, y: "-50%", ease: Linear.easeNone }, '-=1');
+    .fromTo("div.movie4-2", 1, { opacity: 0, y: "25%" }, { opacity: .8, y: "-50%", ease: Linear.easeNone }, '-=1');
 
+var comicThorTl = new TimelineMax()
+    .fromTo(".comic4", 1, { opacity: 0,x: 0 }, { opacity: 1,x: "60%", ease: Linear.easeNone })
+    .fromTo(".movie4-3", 1, { opacity: 0,x: 0 }, { opacity: 1,x: "-50%", ease: Linear.easeNone }, '-=1');
 
+var questionSnapTl = new TimelineMax()
+    .fromTo(".story3-content .story-slide:first-of-type p:first-of-type", 1, { y: "0%" }, { y: "70%", ease: Linear.easeNone })
+    .fromTo(".story3-content .story-slide:first-of-type p:nth-of-type(2)", 1, { opacity: 0, y: "0%" }, { opacity: 1, y: "-50%", ease: Linear.easeNone });
+
+var thanosMartyrTl = new TimelineMax()
+    .from("div.comic3", 1, { opacity: 0, x: "-50%", ease: Linear.easeNone });
+
+var capMjolnirTl = new TimelineMax()
+    .staggerFrom(".story5-content .story-slide:first-of-type div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
+
+var capComicsTl = new TimelineMax()
+    .staggerFrom(".story5-content .story-slide:nth-of-type(2) div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
+
+var capTextTl = new TimelineMax()
+    .fromTo(".story5-content .story-slide:nth-of-type(2) p:first-of-type", 1, {y: "-100%" }, { y: "-10%", ease: Linear.easeNone });
 
 // scenes
 
@@ -242,6 +260,84 @@ var compareThor = new ScrollMagic.Scene({
     })
     .addTo(controller); 
 
+var comicThor = new ScrollMagic.Scene({
+    triggerElement: ".story4-content .story-slide:nth-of-type(2)",
+    triggerHook: 'onEnter',
+    duration: "50%"
+})
+    .setTween(comicThorTl)
+    .addIndicators({
+        name: 'check comicThorTl ',
+        colorStart: 'orange',
+        colorEnd: 'red'
+    })
+    .addTo(controller);
+
+var questionSnap = new ScrollMagic.Scene({
+    triggerElement: ".story3-content .story-slide:first-of-type",
+    triggerHook: 'onCenter',
+    offset: 100,
+    duration: "75%"
+})
+    .setTween(questionSnapTl)
+    .addIndicators({
+        name: 'check questionSnapTl ',
+        colorStart: 'orange',
+        colorEnd: 'red'
+    })
+    .addTo(controller);
+
+var thanosMartyr = new ScrollMagic.Scene({
+    triggerElement: ".story3-content .story-slide:nth-of-type(2) p:nth-of-type(2)",
+    triggerHook: 'onEnter',
+    duration: "50%"
+})
+    .setTween(thanosMartyrTl)
+    .addIndicators({
+        name: 'check thanosMartyrTl ',
+        colorStart: 'green',
+        colorEnd: 'red'
+    })
+    .addTo(controller);
+
+var capMjolnir = new ScrollMagic.Scene({
+    triggerElement: ".story5-content .story-slide:first-of-type",
+    offset: 100,
+    duration: "0"
+})
+    .setTween(capMjolnirTl)
+    .addIndicators({
+        name: 'check capMjolnirTl ',
+        colorStart: 'purple',
+        colorEnd: 'red'
+    })
+    .addTo(controller);
+
+var capComics = new ScrollMagic.Scene({
+    triggerElement: ".story5-content .story-slide:nth-of-type(2)",
+    offset: 100,
+    duration: "0"
+})
+    .setTween(capComicsTl)
+    .addIndicators({
+        name: 'check capComicsTl ',
+        colorStart: 'purple',
+        colorEnd: 'red'
+    })
+    .addTo(controller);
+
+var capText = new ScrollMagic.Scene({
+    triggerElement: ".story5-content .story-slide:nth-of-type(2)",
+    offset: 100,
+    duration: "50%"
+})
+    .setTween(capTextTl)
+    .addIndicators({
+        name: 'check capTextTl ',
+        colorStart: 'brown',
+        colorEnd: 'red'
+    })
+    .addTo(controller);
 
 
 var comicPanel1 = document.querySelector('div.overview-container .panel .comic-panel:first-of-type');
@@ -281,12 +377,27 @@ comicPanel6.addEventListener('click', goToStory6);
 
 // scrollindicator
 
-window.onscroll = function () { myFunction() };
+window.onscroll = function () { myFunction(); };
 
 function myFunction() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
-    // console.log(scrolled);
 }
+
+var navBar = document.querySelector('.MyBlog-menu ');
+
+var lastScrollTop = 0;
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+window.addEventListener("scroll", function () { // or window.addEventListener("scroll"....
+    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    if (st > lastScrollTop) {
+        // downscroll code
+        navBar.classList.remove('revealMenu');
+    } if (st + 3 < lastScrollTop) {
+        // upscroll code
+        navBar.classList.add('revealMenu');
+    }
+    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
