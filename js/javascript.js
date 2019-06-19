@@ -8,27 +8,33 @@ var controller = new ScrollMagic.Controller();
 
 var wipeAnimation1 = new TimelineMax()
     .set('.story-img-1, .story-bg-1', { transformOrigin: 'right center'})
-    .staggerFromTo(".story-img-1, .story-bg-1", 1, {opacity: 0, x: "75%" }, {opacity: 1, x: "0%", ease: Power1.easeOut }, .2);
+    .staggerFromTo(".story-img-1, .story-bg-1", 1, {opacity: 0, x: "75%" }, {opacity: 1, x: "0%", ease: Power1.easeOut }, .2)
+    .fromTo(".story1-container .story-slide p.which-section", 1, { opacity: 0 }, { opacity: 1, ease: Power1.easeOut });
 
 var wipeAnimation2 = new TimelineMax()
     .set('.story-img-2, .story-bg-2', { transformOrigin: 'right center' })
-    .staggerFromTo(".story-img-2, .story-bg-2", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2);
+    .staggerFromTo(".story-img-2, .story-bg-2", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2)
+    .fromTo(".story2-container .story-slide p.which-section", 1, { opacity: 0 }, { opacity: 1, ease: Power1.easeOut });
 
 var wipeAnimation3 = new TimelineMax()
     .set('.story-img-3, .story-bg-3', { transformOrigin: 'right center' })
-    .staggerFromTo(".story-img-3, .story-bg-3", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2);
+    .staggerFromTo(".story-img-3, .story-bg-3", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2)
+    .fromTo(".story3-container .story-slide p.which-section", 1, { opacity: 0 }, { opacity: 1, ease: Power1.easeOut });
 
 var wipeAnimation4 = new TimelineMax()
     .set('.story-img-4, .story-bg-4', { transformOrigin: 'right center' })
-    .staggerFromTo(".story-img-4, .story-bg-4", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2);
+    .staggerFromTo(".story-img-4, .story-bg-4", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2)
+    .fromTo(".story4-container .story-slide p.which-section", 1, { opacity: 0 }, { opacity: 1, ease: Power1.easeOut });
 
 var wipeAnimation5 = new TimelineMax()
     .set('.story-img-5, .story-bg-5', { transformOrigin: 'right center' })
-    .staggerFromTo(".story-img-5, .story-bg-5", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2);
+    .staggerFromTo(".story-img-5, .story-bg-5", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2)
+    .fromTo(".story5-container .story-slide p.which-section", 1, { opacity: 0 }, { opacity: 1, ease: Power1.easeOut });
 
 var wipeAnimation6 = new TimelineMax()
     .set('.story-img-6, .story-bg-6', { transformOrigin: 'right center' })
-    .staggerFromTo(".story-img-6, .story-bg-6", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2);
+    .staggerFromTo(".story-img-6, .story-bg-6", 1, { opacity: 0, x: "75%" }, { opacity: 1, x: "0%", ease: Power1.easeOut }, .2)
+    .fromTo(".story6-container .story-slide p.which-section", 1, { opacity: 0 }, { opacity: 1, ease: Power1.easeOut });
 
 
 
@@ -120,6 +126,25 @@ var beforeThanosSnapTl = new TimelineMax()
 
 var tonyNebulaTl = new TimelineMax()
     .from(".story6-content .story-slide:nth-of-type(5) p", 1, { y: "-100%", ease: Linear.easeNone });
+
+
+var changeColorsTl = new TimelineMax()
+    .to("body, .story-slide", 1, { backgroundColor: "white", ease: Power1.easeBoth })
+    .to("h1, h2, p", 1, { color: "black", ease: Power1.easeBoth }, '-=.5')
+    .to(".progress-container", 1, { backgroundColor: "white", ease: Power1.easeBoth }, '-=1.5')
+    .to(".progress-bar", 1, { backgroundColor: "orange", ease: Power1.easeBoth }, '-=2.5');
+
+var thanosDeadTl = new TimelineMax()
+    .to(".end-thanos", 1, { opacity: 0, y: "50%", ease: Linear.easeNone });
+
+var whyTextChangeTl = new TimelineMax()
+    .to(".story7-content .story-slide:first-of-type p:first-of-type", 1, { opacity: 0, y: "20%", ease: Linear.easeNone })
+    .to(".story7-content .story-slide:nth-of-type(2) p:first-of-type", 1, { opacity: 0, y: "20%", ease: Linear.easeNone })
+    .to(".story7-content .story-slide:nth-of-type(3) p:first-of-type", 1, { opacity: 0, y: "20%", ease: Linear.easeNone })
+    .to(".story7-content .story-slide:nth-of-type(4) p:first-of-type", 1, { opacity: 0, y: "20%", ease: Linear.easeNone });
+
+
+
 
 // scenes
 
@@ -458,6 +483,46 @@ var tonyNebula = new ScrollMagic.Scene({
     // })
     .addTo(controller);
 
+var thanosDead = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(6)",
+    offset: 100,
+    duration: "50%"
+})
+    .setTween(thanosDeadTl)
+    // .addIndicators({
+    //     name: 'check thanosDeadTl ',
+    //     colorStart: 'pink',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var changeColors = new ScrollMagic.Scene({
+    triggerElement: "div#why",
+    triggerHook: 'onCenter',
+    duration: "0"
+})
+    .setTween(changeColorsTl)
+    // .addIndicators({
+    //     name: 'check changeColorsTl ',
+    //     colorStart: 'orange',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var whyTextChange = new ScrollMagic.Scene({
+    triggerElement: ".story7-content .panel",
+    triggerHook: 'onCenter',
+    duration: "550%"
+})
+    .setTween(whyTextChangeTl)
+    // .addIndicators({
+    //     name: 'check whyTextChangeTl ',
+    //     colorStart: 'orange',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+
 
 
 var comicPanelAll = document.querySelectorAll('div.overview-container .panel .comic-panel');
@@ -469,7 +534,8 @@ var comicPanel5 = document.querySelector('div.overview-container .panel .comic-p
 var comicPanel6 = document.querySelector('div.overview-container .panel .comic-panel:nth-of-type(6)');
 
 function goToStory1 () {
-    TweenLite.to(window, 1, { scrollTo: '.story1-container'});
+    TweenLite
+    .to(window, 1, { scrollTo: '.story1-container'});
 }
 function goToStory2() {
     TweenLite.to(window, 1, { scrollTo: '.story2-container'});
@@ -537,3 +603,8 @@ window.addEventListener("scroll", function () { // or window.addEventListener("s
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
+
+
+
+
+
