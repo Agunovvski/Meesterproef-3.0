@@ -49,7 +49,7 @@ var imagesApart = new TimelineMax()
     .fromTo(".movie1, .comic1", 1, { y: '0%' }, { y: "30%", ease: Linear.easeNone });
 
 var staggerStory1Text = new TimelineMax()
-    .staggerFrom(".story1-content .story-slide:nth-of-type(2) p, div.comic1-1", 1, { opacity: 0, y: "10%", ease: Power1.easeOut }, .75)
+    .staggerFrom(".story1-content .story-slide:nth-of-type(2) p, div.comic1-1", 1, { opacity: 0, y: "10%", ease: Power1.easeOut }, .75);
     // .from('div.comic1-1', 1, { opacity: 0, y: "10%", ease: Power1.easeOut}, "-=1");
 
 var whereIsThanos = new TimelineMax()
@@ -78,18 +78,18 @@ var thanosMartyrTl = new TimelineMax()
     .from("div.comic3", 1, { opacity: 0, x: "-50%", ease: Linear.easeNone });
 
 var capMjolnirTl = new TimelineMax()
-    .staggerFrom(".story5-content .story-slide:first-of-type div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
-
-var capMjolnirMoveTl = new TimelineMax()
-    .fromTo(".story5-content .story-slide:first-of-type div:first-of-type", 1, { y: "-10%" }, { y: "40%", ease: Linear.easeNone })
-    .fromTo(".story5-content .story-slide:first-of-type div:nth-of-type(2)", 1, { y: "-20%" }, { y: "20%", ease: Linear.easeNone }, '-=1')
-    .fromTo(".story5-content .story-slide:first-of-type div:nth-of-type(3)", 1, { y: "0%" }, { y: "-20%", ease: Linear.easeNone }, '-=2');
-
-var capComicsTl = new TimelineMax()
     .staggerFrom(".story5-content .story-slide:nth-of-type(2) div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
 
-var capTextTl = new TimelineMax()
-    .fromTo(".story5-content .story-slide:nth-of-type(2) p:first-of-type", 1, {y: "-100%" }, { y: "-10%", ease: Linear.easeNone });
+// var capMjolnirMoveTl = new TimelineMax()
+//     .fromTo(".story5-content .story-slide:nth-of-type(2) div:first-of-type", 1, { y: "-10%" }, { y: "40%", ease: Linear.easeNone })
+//     .fromTo(".story5-content .story-slide:nth-of-type(2) div:nth-of-type(2)", 1, { y: "-20%" }, { y: "20%", ease: Linear.easeNone }, '-=1')
+//     .fromTo(".story5-content .story-slide:nth-of-type(2) div:nth-of-type(3)", 1, { y: "0%" }, { y: "-20%", ease: Linear.easeNone }, '-=2');
+
+var capComicsTl = new TimelineMax()
+    .staggerFrom(".story5-content .story-slide:nth-of-type(3) div", 1, { opacity: 0, y: "20%", ease: Power3.easeOut }, 1);
+
+// var capTextTl = new TimelineMax()
+//     .fromTo(".story5-content .story-slide:nth-of-type(2) p:first-of-type", 1, {y: "-100%" }, { y: "-10%", ease: Linear.easeNone });
 
 // scenes
 
@@ -308,7 +308,7 @@ var thanosMartyr = new ScrollMagic.Scene({
     .addTo(controller);
 
 var capMjolnir = new ScrollMagic.Scene({
-    triggerElement: ".story5-content .story-slide:first-of-type",
+    triggerElement: ".story5-content .story-slide:nth-of-type(2)",
     offset: 100,
     duration: "0"
 })
@@ -321,20 +321,20 @@ var capMjolnir = new ScrollMagic.Scene({
     .addTo(controller);
 
 
-var capMjolnirMove = new ScrollMagic.Scene({
-    triggerElement: ".story5-content .story-slide:first-of-type",
-    duration: "70%"
-})
-    .setTween(capMjolnirMoveTl)
-    // .addIndicators({
-    //     name: 'check capMjolnirMoveTl ',
-    //     colorStart: 'purple',
-    //     colorEnd: 'red'
-    // })
-    .addTo(controller);
+// var capMjolnirMove = new ScrollMagic.Scene({
+//     triggerElement: ".story5-content .story-slide:nth-of-type(2)",
+//     duration: "70%"
+// })
+//     .setTween(capMjolnirMoveTl)
+//     // .addIndicators({
+//     //     name: 'check capMjolnirMoveTl ',
+//     //     colorStart: 'purple',
+//     //     colorEnd: 'red'
+//     // })
+//     .addTo(controller);
 
 var capComics = new ScrollMagic.Scene({
-    triggerElement: ".story5-content .story-slide:nth-of-type(2)",
+    triggerElement: ".story5-content .story-slide:nth-of-type(3)",
     offset: 100,
     duration: "0"
 })
@@ -346,18 +346,18 @@ var capComics = new ScrollMagic.Scene({
     // })
     .addTo(controller);
 
-var capText = new ScrollMagic.Scene({
-    triggerElement: ".story5-content .story-slide:nth-of-type(2)",
-    offset: 100,
-    duration: "50%"
-})
-    .setTween(capTextTl)
-    // .addIndicators({
-    //     name: 'check capTextTl ',
-    //     colorStart: 'brown',
-    //     colorEnd: 'red'
-    // })
-    .addTo(controller);
+// var capText = new ScrollMagic.Scene({
+//     triggerElement: ".story5-content .story-slide:nth-of-type(2)",
+//     offset: 100,
+//     duration: "50%"
+// })
+//     .setTween(capTextTl)
+//     // .addIndicators({
+//     //     name: 'check capTextTl ',
+//     //     colorStart: 'brown',
+//     //     colorEnd: 'red'
+//     // })
+//     .addTo(controller);
 
 var comicPanelAll = document.querySelectorAll('div.overview-container .panel .comic-panel');
 var comicPanel1 = document.querySelector('div.overview-container .panel .comic-panel:first-of-type');

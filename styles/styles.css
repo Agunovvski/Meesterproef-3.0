@@ -398,6 +398,10 @@ div.comic2 {
     height: 100% !important;
     width: 100% !important;
 }
+.juxtapose {
+    height: 100% !important;
+    width: 100% !important;
+}
 div.iframe-embed-styling {
     width: 100%;
     height: 100%;
@@ -430,8 +434,8 @@ a.jx-knightlab {
     font-size: 2rem;
 }
 .story3-content .story-slide:first-of-type p:nth-of-type(3) {
-    grid-area: 6/ 2/ 6/ 10;
-    font-size: 4rem;
+    grid-area: 6/ 4/ 6/ 10;
+    font-size: 2rem;
 }
 .story3-content .story-slide:nth-of-type(2) p:first-of-type {
     grid-area: 1/ 4 / 2/ 10;
@@ -576,25 +580,34 @@ div.movie4-3 {
 }
 
 /* story 5 */
+.story5-content .story-slide:first-of-type p:first-of-type {
+    grid-area: 2 /4 / 3 /10;
+    font-size: 2rem;
+}
+.story5-content .story-slide:first-of-type div {
+    grid-area: 4 / 4 / 6 /10;
+}
+
 div.movie5-1 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://media1.tenor.com/images/7a870aff84a0d62ef0293645f81e2c3f/tenor.gif?itemid=14072817');
-    grid-area: 2/2 /3/7;
-    min-height: 200px;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://media1.tenor.com/images/7a870aff84a0d62ef0293645f81e2c3f/tenor.gif?itemid=14072817');
+    grid-area: 2/4 /3/10;
+    min-height: 210px;
 }
 div.movie5-2 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://media1.tenor.com/images/fcd2c4d030f06f050ec733db0121cb4e/tenor.gif?itemid=14031250');
-    grid-area: 3/ 4/4 / 9;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://media1.tenor.com/images/fcd2c4d030f06f050ec733db0121cb4e/tenor.gif?itemid=14031250');
+    grid-area: 3/ 5/4 / 9;
+    min-height: 200px;
 }
 div.movie5-3 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/80727.jpg');
-    grid-area: 4/6 /5 /12;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/80727.jpg');
+    grid-area: 4/4 /5 /10;
+    min-height: 200px;
 }
-.story5-content .story-slide:first-of-type p:first-of-type {
-    grid-area: 2 /9 /4 /12;
+.story5-content .story-slide:nth-of-type(2) p:first-of-type {
+    grid-area: 3 /9 /4 /12;
     font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
 
 div.comic5-1 {
@@ -612,9 +625,10 @@ div.comic5-3 {
         grid-area: 1 / 9;
         min-height: 200px;
 }
-.story5-content .story-slide:nth-of-type(2) p:first-of-type {
-    font-size: 1.5rem;
-    grid-area: 4 / 7 /4 /12;
+.story5-content .story-slide:nth-of-type(3) p:first-of-type {
+	font-size: 1.5rem;
+	grid-area: 3 / 9 /4 /12;
+	color: orange;
 }
 
 
@@ -629,45 +643,75 @@ div.comic5-3 {
     margin: 5rem 0;
 }
 .story6-content .story-slide:first-of-type p:first-of-type {
-    font-size: 1.5rem;
-    grid-area: 2/ 7/ 6/ 12;
+    font-size: 2rem;
+    grid-area: 1/ 4/ 2/ 10;
 }
-.story6-content .story-slide:first-of-type p:nth-of-type(2) {
-    font-size: 1.5rem;
-    grid-area: 4/ 7 / 6/ 12;
+div.movie6-1 {
+    grid-area: 3 /2 /4 / 8;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://timedotcom.files.wordpress.com/2019/04/avengers-endgame-final-trailer-16.png');
 }
-div.comic6-1 {
+div.movie6-2 {
+    grid-area: 4 /6 /5 / 12;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2019/05/eba5300_v229.1089-h_2019.jpg');
+}
+
+/* div.comic6-1 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/15730/15730._SX1280_QL80_TTD_.jpg');
     grid-area: 1 / 3 / 7 /6;
     min-height: 500px;
-}
+} */
 
-div.comic6-2 {
+/* div.comic6-2 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://babbletop.com/wp-content/uploads/2017/06/Thanos_Snappy.png');
     grid-area: 1 / 7 / 3 / 11;
-}
-div.movie6-1 {
+} */
+/* div.movie6-1 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
     url('https://media.melty.fr/article-3911223-raw/media.gif');
     grid-area: 5 / 7 / 7 / 11;
-}
+} */
 
 .story6-content .story-slide:nth-of-type(2) {
     margin-bottom: 10rem;
 }
 
 .story6-content .story-slide:nth-of-type(2) p:first-of-type{
-    font-size: 1.5rem;
-    grid-area: 3 /2 / 3 /6;
+    font-size: 2rem;
+    grid-area: 2 / 4  / 3 /10 ;
+}
+.story6-content .story-slide:nth-of-type(2) p:nth-of-type(2) {
+    font-size: 2rem;
+    grid-area: 4 / 4 / 6 /10;
 }
 
 .story6-content .story-slide:nth-of-type(3) p:first-of-type {
     grid-area: 1/ 4 / 2/ 10;
     font-size: 2rem;
 }
-
+div.movie6-3 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://i.kym-cdn.com/entries/icons/original/000/029/798/endgame.jpg');
+    grid-area: 3 /2 /4 /6;
+}
+div.movie6-4 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/avengers-endgame-cap-mjolnir-reach-700x286.jpg');
+    grid-area: 3 /8 /4 /12;
+}
+div.movie6-5 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://www.screengeek.net/wp-content/uploads/2019/05/avengers-endgame-final-battle-1.jpg');
+    grid-area: 4 /2 /4 /6;
+}
+div.movie6-6 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+        url('https://www.awn.com/sites/default/files/styles/original/public/image/featured/1049451-weta-and-thanos-come-full-circle-avengers-endgame.jpg?itok=SrPUgi2c');
+    grid-area: 4 /8 /4 /12;
+}
 .story6-content .story-slide:nth-of-type(3) p:nth-of-type(2) {
     font-size: 1rem;
     grid-area: 5 /2 / 6 /6;
@@ -675,4 +719,32 @@ div.movie6-1 {
 .story6-content .story-slide:nth-of-type(3) p:nth-of-type(3) {
     font-size: 1rem;
     grid-area: 5 /7 / 5 /11;
+}
+.story6-content .story-slide:nth-of-type(4) p:first-of-type {
+    grid-area: 4/ 4 / 5/ 10;
+    font-size: 2rem;
+}
+.story6-content .story-slide:nth-of-type(5) div {
+    grid-area: 3 / 5 / 6 /9;
+}
+div.movie6-7 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://www.syfy.com/sites/syfy/files/styles/1170xauto/public/captain_marvel_vs_thanos.jpg');
+    grid-area: 2 /2 /3 /6;
+}
+div.comic6-1 {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2qHUtR0nLRHoGATVXFuBaAdX2cO4-nsTRndJve0v0qE8addUkvw');
+    grid-area: 2 /8 /3 /12;
+}
+.story6-content .story-slide:nth-of-type(5) p:first-of-type {
+    font-size: 1.5rem;
+    grid-area: 3 / 9 / 6 / 12;
+    margin-left: 1rem;
+    color: orange;
+}
+.story6-content .story-slide:nth-of-type(5) p:nth-of-type(2) {
+    font-size: 1.5rem;
+    grid-area: 3 / 2 / 6 / 5;
+    margin-right: 1rem;
 }
