@@ -784,3 +784,8 @@ div.comic6-1 {
     grid-area: 1 / 4 / 4 / 10;
     margin-left: 3rem;
 } */
+
+
+div#the-end section:first-of-type h2 {
+    grid-area: 3 /5/ 6 /10;
+}
