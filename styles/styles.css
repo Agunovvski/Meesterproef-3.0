@@ -112,6 +112,11 @@ h1, h2 p {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+p.which-section {
+    grid-area: 5 /10 /5 /11;
+    color: black;
+    margin-top: 1rem;
+}
 
 
 /* specific section style */
@@ -587,6 +592,9 @@ div.movie4-3 {
 .story5-content .story-slide:first-of-type div {
     grid-area: 4 / 4 / 6 /10;
 }
+.story5-content .story-slide:first-of-type div div div.jx-left img{
+    width: 120%;
+}
 
 div.movie5-1 {
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://media1.tenor.com/images/7a870aff84a0d62ef0293645f81e2c3f/tenor.gif?itemid=14072817');
@@ -725,26 +733,26 @@ div.movie6-6 {
     font-size: 2rem;
 }
 .story6-content .story-slide:nth-of-type(5) div {
-    grid-area: 3 / 5 / 6 /9;
+    grid-area: 4 / 3 / 6 /11;
 }
 div.movie6-7 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://www.syfy.com/sites/syfy/files/styles/1170xauto/public/captain_marvel_vs_thanos.jpg');
-    grid-area: 2 /2 /3 /6;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('https://www.syfy.com/sites/syfy/files/styles/1170xauto/public/captain_marvel_vs_thanos.jpg');
+    grid-area: 1 /2 /3 /6;
 }
 div.comic6-1 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)),
-    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2qHUtR0nLRHoGATVXFuBaAdX2cO4-nsTRndJve0v0qE8addUkvw');
-    grid-area: 2 /8 /3 /12;
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.73)), url('http://www1.star2.com/wp-content/uploads/2018/04/str2_wow2404infinity_MUSTUSE_spidey_cn.jpg');
+    grid-area: 1 /8 /3 /12;
 }
 .story6-content .story-slide:nth-of-type(5) p:first-of-type {
     font-size: 1.5rem;
-    grid-area: 3 / 9 / 6 / 12;
-    margin-left: 1rem;
+    grid-area: 3 / 8 / 4 / 11;
+    /* margin-left: 1rem; */
     color: orange;
+    margin-bottom: 1rem;
 }
 .story6-content .story-slide:nth-of-type(5) p:nth-of-type(2) {
     font-size: 1.5rem;
-    grid-area: 3 / 2 / 6 / 5;
-    margin-right: 1rem;
+    grid-area: 3 / 3 / 4 / 6;
+    /* margin-right: 1rem; */
+    margin-bottom: 1rem;
 }

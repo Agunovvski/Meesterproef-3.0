@@ -91,6 +91,36 @@ var capComicsTl = new TimelineMax()
 // var capTextTl = new TimelineMax()
 //     .fromTo(".story5-content .story-slide:nth-of-type(2) p:first-of-type", 1, {y: "-100%" }, { y: "-10%", ease: Linear.easeNone });
 
+
+var charVsThanosTl = new TimelineMax()
+    .fromTo("div.movie6-1", 1, { opacity: 1, x: "-10%" }, { opacity: .5, x: "25%", ease: Linear.easeNone })
+    .fromTo("div.movie6-2", 1, { opacity: 0, x: "10%" }, { opacity: .8, x: "-25%", ease: Linear.easeNone }, '-=1');
+
+var intenseFightTl = new TimelineMax()
+    .fromTo(".story6-content .story-slide:nth-of-type(2) p:first-of-type", 2, { opacity: 1, y: "0%" }, { opacity: 0, y: "40%", ease: Linear.easeNone })
+    .fromTo(".story6-content .story-slide:nth-of-type(2) p:nth-of-type(2)", 1, { opacity: 0 }, { opacity: 1, ease: Linear.easeNone }, '-=2');
+
+var capSideTl = new TimelineMax()
+    .fromTo(".story6-content .story-slide:nth-of-type(3) p:nth-of-type(1)", 1, { y: "-10%" }, { y: "60%", ease: Linear.easeNone });
+
+var finalBattleTl = new TimelineMax()
+    .set("div.movie6-3", { scale: 1.2 })
+    .set("div.movie6-6", { scale: 1.2 })
+    .fromTo("div.movie6-3", 1, { opacity: 0, x: "0%" }, { opacity: 1, x: "20%", ease: Linear.easeNone })
+    .fromTo("div.movie6-4", 1, { opacity: 0, x: "0%" }, { opacity: 1, x: "-20%", ease: Linear.easeNone })
+    .fromTo("div.movie6-5", 1, { opacity: 0, x: "0%" }, { opacity: 1, x: "20%", ease: Linear.easeNone })
+    .fromTo("div.movie6-6", 1, { opacity: 0, x: "0%" }, { opacity: 1, x: "-20%", ease: Linear.easeNone });
+
+var thanosStruggleTl = new TimelineMax()
+    .fromTo("div.movie6-7", 1, { opacity: 0, x: '40%' }, { opacity: 1, x: "20%", ease: Linear.easeNone })
+    .fromTo("div.comic6-1", 1, { opacity: 0, x: '-40%' }, { opacity: 1, x: "-20%", ease: Linear.easeNone }, '-=1');
+
+var beforeThanosSnapTl = new TimelineMax()
+    .to(".story6-content .story-slide:nth-of-type(4) p:first-of-type", 1, { y: "200%", ease: Linear.easeNone });
+
+var tonyNebulaTl = new TimelineMax()
+    .from(".story6-content .story-slide:nth-of-type(5) p", 1, { y: "-100%", ease: Linear.easeNone });
+
 // scenes
 
 $('.start-story h2').each(function(){
@@ -246,11 +276,11 @@ var story2SideBySide = new ScrollMagic.Scene({
     duration: "30%"
 })
     .setTween(sideBySide)
-    .addIndicators({
-        name: 'check sideBySide',
-        colorStart: 'yellow',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check sideBySide',
+    //     colorStart: 'yellow',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller);  
 
 var compareThor = new ScrollMagic.Scene({
@@ -260,11 +290,11 @@ var compareThor = new ScrollMagic.Scene({
     duration: "100%"
 })
     .setTween(compareThorTl)
-    .addIndicators({
-        name: 'check compareThorTl',
-        colorStart: 'yellow',
-        colorEnd: 'red'
-    })
+    // .addIndicators({
+    //     name: 'check compareThorTl',
+    //     colorStart: 'yellow',
+    //     colorEnd: 'red'
+    // })
     .addTo(controller); 
 
 var comicThor = new ScrollMagic.Scene({
@@ -321,18 +351,6 @@ var capMjolnir = new ScrollMagic.Scene({
     .addTo(controller);
 
 
-// var capMjolnirMove = new ScrollMagic.Scene({
-//     triggerElement: ".story5-content .story-slide:nth-of-type(2)",
-//     duration: "70%"
-// })
-//     .setTween(capMjolnirMoveTl)
-//     // .addIndicators({
-//     //     name: 'check capMjolnirMoveTl ',
-//     //     colorStart: 'purple',
-//     //     colorEnd: 'red'
-//     // })
-//     .addTo(controller);
-
 var capComics = new ScrollMagic.Scene({
     triggerElement: ".story5-content .story-slide:nth-of-type(3)",
     offset: 100,
@@ -346,18 +364,101 @@ var capComics = new ScrollMagic.Scene({
     // })
     .addTo(controller);
 
-// var capText = new ScrollMagic.Scene({
-//     triggerElement: ".story5-content .story-slide:nth-of-type(2)",
-//     offset: 100,
-//     duration: "50%"
-// })
-//     .setTween(capTextTl)
-//     // .addIndicators({
-//     //     name: 'check capTextTl ',
-//     //     colorStart: 'brown',
-//     //     colorEnd: 'red'
-//     // })
-//     .addTo(controller);
+
+var charVsThanos = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:first-of-type",
+    offset: 200,
+    duration: "70%"
+})
+    .setTween(charVsThanosTl)
+    // .addIndicators({
+    //     name: 'check charVsThanosTl ',
+    //     colorStart: 'purple',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var intenseFight = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(2)",
+    offset: 200,
+    duration: "70%"
+})
+    .setTween(intenseFightTl)
+    // .addIndicators({
+    //     name: 'check intenseFightTl ',
+    //     colorStart: 'purple',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+    
+var capSide = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(3)",
+    offset: 200,
+    duration: "70%"
+})
+    .setTween(capSideTl)
+    // .addIndicators({
+    //     name: 'check capSideTl ',
+    //     colorStart: 'purple',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var finalBattle = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(3)",
+    offset: 200,
+    duration: "70%"
+})
+    .setTween(finalBattleTl)
+    // .addIndicators({
+    //     name: 'check finalBattleTl ',
+    //     colorStart: 'yellow',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var thanosStruggle = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(4)",
+    triggerHook: 'onCenter',
+    // offset: 100,
+    duration: "20%"
+})
+    .setTween(thanosStruggleTl)
+    // .addIndicators({
+    //     name: 'check thanosStruggleTl ',
+    //     colorStart: 'green',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var beforeThanosSnap = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(4)",
+    // offset: 100,
+    triggerHook: 'onLeave',
+    duration: "100%"
+})
+    .setTween(beforeThanosSnapTl)
+    // .addIndicators({
+    //     name: 'check beforeThanosSnapTl ',
+    //     colorStart: 'pink',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+var tonyNebula = new ScrollMagic.Scene({
+    triggerElement: ".story6-content .story-slide:nth-of-type(5)",
+    // offset: 100,
+    duration: "100%"
+})
+    .setTween(tonyNebulaTl)
+    // .addIndicators({
+    //     name: 'check tonyNebulaTl ',
+    //     colorStart: 'pink',
+    //     colorEnd: 'red'
+    // })
+    .addTo(controller);
+
+
 
 var comicPanelAll = document.querySelectorAll('div.overview-container .panel .comic-panel');
 var comicPanel1 = document.querySelector('div.overview-container .panel .comic-panel:first-of-type');
